@@ -14,7 +14,7 @@ jobs:
           channel: stable
       - run: flutter create --org com.nearchat --project-name nearchat app
       - run: |
-          cp main.dart app/lib/main.dart
+          cp main*.dart app/lib/main.dart
           cd app
           sed -i 's|<application|<uses-permission android:name="android.permission.INTERNET"/><uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/><application|' android/app/src/main/AndroidManifest.xml
           flutter build apk --release
